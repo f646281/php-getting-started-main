@@ -1,10 +1,11 @@
 <?php
-// the message
-$msg = "First line of text\nSecond line of text";
+ini_set("SMTP", "aspmx.l.google.com");
+ini_set("sendmail_from", "psantos@netquest.com");
 
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
+$message = "The mail message was sent with the following mail setting:\r\nSMTP = aspmx.l.google.com\r\nsmtp_port = 25\r\nsendmail_from = psantos@netquest.com";
 
-// send email
-mail("psantos@netquest.com","My subject",$msg);
+$headers = "From: psantos@netquest.com";
+
+mail("Sending@provider.com", "Testing", $message, $headers);
+echo "Check your email now....&lt;BR/>";
 ?>
